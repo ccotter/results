@@ -1,11 +1,19 @@
 
 Evaluations comparing pthreads and deterministic Linux
 
-Programs
-~~~~~~~~
+LU decomposition
+~~~~~~~~~~~~~~~~
+LU decomposition using discontiguous blocks (16x16, 32x32, 64x64, 128x128).
+We run on matrices of sizes NxN where N takes on values in {16, 32, 64, 128, 256
+512, 1024, 2048}. When the matrix is too small for the partition size, we don't
+partition (i.e. use a partition block equal in size to the matrix itself).
 
-* LU decomposition using discontiguous blocks (16x16, 32x32, 64x64, 128x128).
-* Matrix mutlitplication with varying block sizes.
+* Matrix mutlitplication of two 1024x1024 matrices. The matrices are partitioned
+  into blocks of size 256x256. The main thread forks 16 tasks to compute each
+  partitioned block. There is no synchronization/locking, so all threads are
+  started immediately, and the main thread joins on each.
+
 * md5 hash string searcher (e.g. to crack passwords).
+
 * quicksort.
 
