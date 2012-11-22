@@ -1,0 +1,3 @@
+N=1
+blksize 256x256 thr 16 itr 10: 63.316197500
+merge time: 0.035750100
