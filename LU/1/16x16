@@ -1,0 +1,16 @@
+matrix size: 16x16 = 256 (4096 bytes)
+  blksize 16x16 itr 128: 0.000088601
+matrix size: 32x32 = 1024 (16384 bytes)
+  blksize 16x16 itr 64: 0.000314593
+matrix size: 64x64 = 4096 (65536 bytes)
+  blksize 16x16 itr 32: 0.002221500
+matrix size: 128x128 = 16384 (262144 bytes)
+  blksize 16x16 itr 16: 0.014926625
+matrix size: 256x256 = 65536 (1048576 bytes)
+  blksize 16x16 itr 8: 0.106156750
+matrix size: 512x512 = 262144 (4194304 bytes)
+  blksize 16x16 itr 4: 0.793401500
+matrix size: 1024x1024 = 1048576 (16777216 bytes)
+  blksize 16x16 itr 2: 6.735255000
+matrix size: 2048x2048 = 4194304 (67108864 bytes)
+  blksize 16x16 itr 1: 94.194710000
