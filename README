@@ -18,6 +18,11 @@ takes. This is accomplished by modifying how we use bench_join; we do a
 dget(pid, 0, 0, 0, 0) to merely wait until the child terminates, then time the
 call to bench_join.
 
+Each benchmark is run on a 2 socket x 4 core Intel Xeon E5410 2.33GHz machine
+with 8BG of RAM running Arch Linux. To run a benchmark with N cores, we specify
+maxcpus=N to the kernel command line to limit the number of available
+processors.
+
 LU decomposition
 ~~~~~~~~~~~~~~~~
 LU decomposition using discontiguous blocks (16x16, 32x32, 64x64, 128x128).
