@@ -1,0 +1,6 @@
+N=1
+blksize 256x256 thr 16 itr 10: 52.666682800
+N=2
+blksize 256x256 thr 16 itr 10: 33.623577400
+N=4
+blksize 256x256 thr 16 itr 10: 20.452916600

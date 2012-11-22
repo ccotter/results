@@ -1,0 +1,9 @@
+N=1
+blksize 256x256 thr 16 itr 10: 63.316197500
+merge time: 0.035750100
+N=2
+blksize 256x256 thr 16 itr 10: 29.999535200
+merge time: 0.034526400
+N=4
+blksize 256x256 thr 16 itr 10: 20.114011000
+merge time: 0.033188400
