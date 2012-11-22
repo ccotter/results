@@ -1,0 +1,24 @@
+matrix size: 16x16 = 256 (4096 bytes)
+blksize 1x1 thr  256 itr 5: 0.393844200
+  time in MERGE: 0.196583400
+matrix size: 32x32 = 1024 (16384 bytes)
+blksize 2x2 thr  256 itr 5: 0.389439200
+  time in MERGE: 0.193940800
+matrix size: 64x64 = 4096 (65536 bytes)
+blksize 4x4 thr  256 itr 5: 0.398528800
+  time in MERGE: 0.195125200
+matrix size: 128x128 = 16384 (262144 bytes)
+blksize 8x8 thr  256 itr 5: 0.424563600
+  time in MERGE: 0.198062400
+matrix size: 256x256 = 65536 (1048576 bytes)
+blksize 16x16 thr  256 itr 5: 0.561386600
+  time in MERGE: 0.215381800
+matrix size: 512x512 = 262144 (4194304 bytes)
+blksize 32x32 thr  256 itr 5: 1.304811400
+  time in MERGE: 0.234041600
+matrix size: 1024x1024 = 1048576 (16777216 bytes)
+blksize 64x64 thr  256 itr 5: 7.257102000
+  time in MERGE: 0.310573000
+matrix size: 2048x2048 = 4194304 (67108864 bytes)
+blksize 128x128 thr  256 itr 5: 100.738907600
+  time in MERGE: 0.393781000
