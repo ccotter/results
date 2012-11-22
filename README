@@ -18,12 +18,21 @@ takes. This is accomplished by modifying how we use bench_join; we do a
 dget(pid, 0, 0, 0, 0) to merely wait until the child terminates, then time the
 call to bench_join.
 
+Each benchmark is run on a 2 socket x 4 core Intel Xeon E5410 2.33GHz machine
+with 8BG of RAM running Arch Linux. To run a benchmark with N cores, we specify
+maxcpus=N to the kernel command line to limit the number of available
+processors.
+
 LU decomposition
 ~~~~~~~~~~~~~~~~
 LU decomposition using discontiguous blocks (16x16, 32x32, 64x64, 128x128).
 We run on matrices of sizes NxN where N takes on values in {16, 32, 64, 128, 256
 512, 1024, 2048}. When the matrix is too small for the partition size, we don't
 partition (i.e. use a partition block equal in size to the matrix itself).
+
+Both pthreads and deterministic versions generate the input matrix randomly
+using identical seed values for each computation (so that both versions
+operate on the same matrices).
 
 We use the N^2 partitioning algorithm described in
 http://www.cse.uiuc.edu/courses/cs554/notes/06_lu.pdf.
@@ -54,6 +63,11 @@ started immediately, and the main thread joins on each. This is how both the
 pthreads and deterministic versions work. In fact, the C code for each is nearly
 identical, the notable exception being replacing pthread_create -> bench_fork
 and pthread_join -> bench_join.
+
+The benchmark computes the matrix multiply ten times and averages the runtime.
+Each computation uses different input matrices. We generate the matrices
+randomly using the same seed for both pthreads and deterministic Linux, thus
+ensuring the two versions multiply the same matrices.
 
 md5
 ~~~
