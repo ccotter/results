@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-# To format deterministic LU evals into CSV format.
+# To format deterministic matmult evals into CSV format.
 
 def readfile(n):
-    f = "../LU/det%d" % n
+    f = "../matmult/det%d" % n
     fl = open(f)
     lines = fl.readlines()
     print("N=%d" % n)

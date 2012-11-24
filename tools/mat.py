@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-# To format pthread LU evals into CSV format.
+# To format pthread matmult evals into CSV format.
 
 def readfile(n):
-    f = "../LU/pthread%d" % n
+    f = "../matmult/pthread%d" % n
     fl = open(f)
     lines = fl.readlines()
     print("N=%d" % n)
