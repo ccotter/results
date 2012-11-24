@@ -25,10 +25,9 @@ processors.
 
 LU decomposition
 ~~~~~~~~~~~~~~~~
-LU decomposition using discontiguous blocks (16x16, 32x32, 64x64, 128x128).
 We run on matrices of sizes NxN where N takes on values in {16, 32, 64, 128, 256
-512, 1024, 2048}. When the matrix is too small for the partition size, we don't
-partition (i.e. use a partition block equal in size to the matrix itself).
+512, 1024, 2048}. We partition into 256 blocks (16x16) and fork a thread for
+each block.
 
 Both pthreads and deterministic versions generate the input matrix randomly
 using identical seed values for each computation (so that both versions
@@ -73,6 +72,12 @@ md5
 ~~~
 md5 hash string searcher (e.g. to crack passwords).
 
+We search 11 randomly generated strings (they are hardcoded into the program
+so the pthreads and deterministic versions have identical input). N threads are
+forked to search for the string where N is the number of processors running.
+
 quicksort
 ~~~~~~~~~
+
+
 

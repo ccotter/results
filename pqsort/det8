@@ -1,0 +1,16 @@
+nthreads 16...
+array_size: 1000	avg. time: 0.049196000
+array_size: 4000	avg. time: 0.054722000
+array_size: 8000	avg. time: 0.058307000
+array_size: 10000	avg. time: 0.060309666
+array_size: 40000	avg. time: 0.059875333
+array_size: 80000	avg. time: 0.057967333
+array_size: 100000	avg. time: 0.070368666
+array_size: 400000	avg. time: 0.079561000
+array_size: 800000	avg. time: 0.102408333
+array_size: 1000000	avg. time: 0.129122333
+array_size: 4000000	avg. time: 0.351551333
+array_size: 8000000	avg. time: 0.879616666
+array_size: 10000000	avg. time: 0.953585000
+array_size: 40000000	avg. time: 3.584858333
+array_size: 80000000	avg. time: 7.099525333
