@@ -11,7 +11,7 @@ def getstat(ls):
     dev = 0
     for i in range(len(ls)):
         dev += (float(ls[i]) - avg) ** 2
-    dev /= len(ls)
+    dev /= len(ls) - 1
     dev **= .5
     return avg, dev
 
