@@ -24,7 +24,7 @@ def getstat(ls):
 
 
 def readfile(n):
-    f = "../matmult/det%d" % n
+    f = "../../matmult/det%d" % n
     fl = open(f)
     lines = fl.readlines()
     for i in range(int(len(lines) / 11)):

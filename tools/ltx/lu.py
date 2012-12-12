@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
-# To format pthread LU evals into CSV format.
+import sys
+w = sys.stdout.write
+
+data = dict()
 
 def getstat(ls):
     assert(len(ls) == 10)
@@ -17,16 +20,30 @@ def getstat(ls):
 
 
 def readfile(n):
-    f = "../LU/pthread%d" % n
+    global data
+    f = "../../LU/pthread%d" % n
     fl = open(f)
     lines = fl.readlines()
     for i in range(int(len(lines) / 11)):
         ls = lines[11*i].split(" ")
+        arr = data.get(ls[2], [])
         avg, dev = getstat(lines[11*i+1:11*(i+1)])
-        print(ls[2] + "," + repr(avg) + "," + repr(dev))
+        arr.append([avg, dev])
+        data[ls[2]] = arr
 
 for i in range(4):
-    print("N=" + repr(2**i))
     readfile(2 ** i)
-    print()
+
+keys = data.keys()
+keys = sorted(keys, key=lambda x: int(x[:x.index('x')]))
+print(keys)
+for sz in keys:
+    at = data[sz]
+    for i in range(4):
+        w("%.6f $\pm$ %.6f" % (at[i][0], at[i][1]))
+        if 3 == i:
+            w(" \\")
+        else:
+            w(" & ")
+    w("\n")
 

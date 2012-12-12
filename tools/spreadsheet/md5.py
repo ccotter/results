@@ -23,7 +23,7 @@ def add(r, a, b):
 def dogroup(n, s):
     results = {}
     for i in range(5):
-        f = "../md5/%s%d-%d" % (s, n, (i+1))
+        f = "../../md5/%s%d-%d" % (s, n, (i+1))
         fl = open(f)
         lines = fl.readlines()
         for j in range(int(len(lines) / 3)):

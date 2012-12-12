@@ -17,7 +17,7 @@ def getstat(ls):
 
 
 def readfile(s, n):
-    f = "../pqsort/%s%d" % (s, n)
+    f = "../../pqsort/%s%d" % (s, n)
     fl = open(f)
     lines = fl.readlines()
     for i in range(int(len(lines) / 11)):
